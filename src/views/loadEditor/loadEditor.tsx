@@ -4,11 +4,12 @@ import { SqlEditor } from "../../components/sqlEditor";
 export function LoadEditor(){
     const sql = (sql: string) => { console.log(sql)}
     return(
-        <main className="max-w-full h-screen flex items-center justify-center p-8">
+        <main className="flex w-full h-full">
             <SqlEditor onRun={sql} className=""/>
-            <div className="bg-amber-200">
-                jnwocnwcwcwec
-            </div>
+
+            <section className="bg-amber-200 h-full max-w-full w-[25%]">
+                menu
+            </section>
         </main>
     )
 }
