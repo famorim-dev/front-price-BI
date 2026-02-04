@@ -4,210 +4,114 @@ export function NavBar(){
 
     return(
         <section className="h-full">
-            	<aside
-		className="flex flex-col items-center bg-white text-gray-700 shadow h-full">
-		
-
-		<div className="h-16 flex items-center w-full">
+            <aside className="flex flex-col items-center bg-white text-gray-700 shadow h-full">
 			
-			<a className="h-6 w-6 mx-auto" href="http://svelte.dev/">
-				<img
-					className="h-6 w-6 mx-auto"
-					src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Svelte_Logo.svg/512px-Svelte_Logo.svg.png"
-					alt="svelte logo" />
-			</a>
-		</div>
-
-		<ul>
-			
-			<li className="hover:bg-gray-100">
-				<a
-					href="."
-					className="h-16 px-6 flex flex justify-center items-center w-full
-					focus:text-orange-500">
-					<svg
-						className="h-5 w-5"
-						xmlns="http://www.w3.org/2000/svg"
-						width="24"
-						height="24"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="2"
-						stroke-linecap="round"
-						stroke-linejoin="round">
-						<polyline
-							points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline>
-						<path
-							d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0
-							2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0
-							0-1.79 1.11z"></path>
+				<div className="h-16 flex items-center w-full">
+					<svg width="20" height="28" viewBox="0 0 20 28" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 mx-auto">
+					<mask id="path-1-outside-1_242_2" maskUnits="userSpaceOnUse" x="-0.973694" y="-0.912003" width="21" height="29" fill="black">
+					<rect fill="white" x="-0.973694" y="-0.912003" width="21" height="29"/>
+					<path d="M8.94631 23.576C8.26364 24.0453 7.46364 24.28 6.54631 24.28C5.62897 24.28 4.97831 24.0987 4.59431 23.736C4.23164 23.3733 4.05031 22.7867 4.05031 21.976V6.712L3.34631 4.504C3.43164 4.39733 3.54897 4.25866 3.69831 4.088C3.86897 3.91733 4.22097 3.69333 4.75431 3.416C5.28764 3.13866 5.84231 3 6.41831 3C7.52764 3 8.27431 3.608 8.65831 4.824C9.78897 3.69333 11.0476 3.128 12.4343 3.128C13.8423 3.128 14.9196 3.56533 15.6663 4.44C16.4343 5.29333 16.8183 6.43466 16.8183 7.864V12.024C16.8183 13.9867 16.0503 15.8213 14.5143 17.528C12.9783 19.2347 11.2716 20.088 9.39431 20.088H8.94631V23.576ZM8.94631 15.992C9.26631 16.248 9.68231 16.376 10.1943 16.376C10.7063 16.376 11.1223 16.216 11.4423 15.896C11.7623 15.576 11.9223 15.128 11.9223 14.552V9.912C11.9223 8.78133 11.645 8.01333 11.0903 7.608C10.749 7.39466 10.397 7.288 10.0343 7.288C9.67164 7.288 9.30897 7.34133 8.94631 7.448V15.992Z"/>
+					</mask>
+					<path d="M8.94631 23.576L10.6459 26.0481L11.9463 25.1541V23.576H8.94631ZM4.59431 23.736L2.47299 25.8573L2.50328 25.8876L2.53444 25.917L4.59431 23.736ZM4.05031 6.712H7.05031V6.24531L6.90854 5.80068L4.05031 6.712ZM3.34631 4.504L1.0037 2.62991L-1.43051e-06 3.88454L0.488073 5.41532L3.34631 4.504ZM3.69831 4.088L1.57698 1.96668L1.50635 2.03731L1.44058 2.11248L3.69831 4.088ZM4.75431 3.416L3.37025 0.754347H3.37025L4.75431 3.416ZM8.65831 4.824L5.79756 5.72739L7.28556 10.4394L10.7796 6.94532L8.65831 4.824ZM15.6663 4.44L13.3846 6.38778L13.4101 6.41768L13.4364 6.44689L15.6663 4.44ZM14.5143 17.528L16.7442 19.5349V19.5349L14.5143 17.528ZM8.94631 20.088V17.088H5.94631V20.088H8.94631ZM8.94631 15.992H5.94631V17.4339L7.07222 18.3346L8.94631 15.992ZM11.4423 15.896L9.32099 13.7747L9.32099 13.7747L11.4423 15.896ZM11.0903 7.608L12.8604 5.18582L12.7725 5.12165L12.6803 5.064L11.0903 7.608ZM8.94631 7.448L8.09981 4.5699L5.94631 5.20328V7.448H8.94631ZM8.94631 23.576L7.24672 21.1039C7.11734 21.1928 6.92468 21.28 6.54631 21.28V24.28V27.28C8.0026 27.28 9.40994 26.8978 10.6459 26.0481L8.94631 23.576ZM6.54631 24.28V21.28C6.41416 21.28 6.31797 21.2734 6.25295 21.2659C6.18741 21.2583 6.16472 21.2511 6.17568 21.2541C6.19245 21.2588 6.40671 21.3212 6.65418 21.555L4.59431 23.736L2.53444 25.917C3.76367 27.078 5.38257 27.28 6.54631 27.28V24.28ZM4.59431 23.736L6.71563 21.6147C6.94125 21.8403 7.02733 22.0566 7.05251 22.1381C7.07371 22.2067 7.05031 22.1711 7.05031 21.976H4.05031H1.05031C1.05031 23.1355 1.29553 24.6799 2.47299 25.8573L4.59431 23.736ZM4.05031 21.976H7.05031V6.712H4.05031H1.05031V21.976H4.05031ZM4.05031 6.712L6.90854 5.80068L6.20454 3.59268L3.34631 4.504L0.488073 5.41532L1.19207 7.62332L4.05031 6.712ZM3.34631 4.504L5.68891 6.37808C5.73472 6.32082 5.81953 6.21952 5.95603 6.06351L3.69831 4.088L1.44058 2.11248C1.27841 2.29781 1.12856 2.47384 1.0037 2.62991L3.34631 4.504ZM3.69831 4.088L5.81963 6.20932C5.73668 6.29226 5.67729 6.33719 5.66812 6.34412C5.65509 6.35396 5.66318 6.347 5.70093 6.32298C5.77913 6.27322 5.91857 6.19194 6.13837 6.07765L4.75431 3.416L3.37025 0.754347C2.85116 1.02427 2.11224 1.43142 1.57698 1.96668L3.69831 4.088ZM4.75431 3.416L6.13837 6.07765C6.26348 6.01259 6.3454 6 6.41831 6V3V-3.8147e-06C5.33921 -3.8147e-06 4.3118 0.26474 3.37025 0.754347L4.75431 3.416ZM6.41831 3V6C6.42088 6 6.35572 6.00009 6.24838 5.96492C6.13586 5.92806 6.0187 5.86591 5.91603 5.7823C5.70957 5.61419 5.72581 5.50018 5.79756 5.72739L8.65831 4.824L11.5191 3.9206C11.2068 2.93181 10.6577 1.9058 9.70459 1.12969C8.71632 0.324961 7.55266 -3.8147e-06 6.41831 -3.8147e-06V3ZM8.65831 4.824L10.7796 6.94532C11.441 6.28391 11.9662 6.128 12.4343 6.128V3.128V0.127996C10.129 0.127996 8.13691 1.10275 6.53699 2.70268L8.65831 4.824ZM12.4343 3.128V6.128C13.1794 6.128 13.3341 6.3286 13.3846 6.38778L15.6663 4.44L17.948 2.49221C16.5052 0.802061 14.5052 0.127996 12.4343 0.127996V3.128ZM15.6663 4.44L13.4364 6.44689C13.5953 6.62337 13.8183 6.98674 13.8183 7.864H16.8183H19.8183C19.8183 5.88259 19.2734 3.96329 17.8962 2.4331L15.6663 4.44ZM16.8183 7.864H13.8183V12.024H16.8183H19.8183V7.864H16.8183ZM16.8183 12.024H13.8183C13.8183 13.1219 13.4141 14.2659 12.2844 15.5211L14.5143 17.528L16.7442 19.5349C18.6865 17.3767 19.8183 14.8514 19.8183 12.024H16.8183ZM14.5143 17.528L12.2844 15.5211C11.18 16.7482 10.2355 17.088 9.39431 17.088V20.088V23.088C12.3078 23.088 14.7766 21.7211 16.7442 19.5349L14.5143 17.528ZM9.39431 20.088V17.088H8.94631V20.088V23.088H9.39431V20.088ZM8.94631 20.088H5.94631V23.576H8.94631H11.9463V20.088H8.94631ZM8.94631 15.992L7.07222 18.3346C8.04567 19.1134 9.17495 19.376 10.1943 19.376V16.376V13.376C10.1861 13.376 10.2575 13.3748 10.3806 13.4127C10.5106 13.4527 10.6678 13.5273 10.8204 13.6494L8.94631 15.992ZM10.1943 16.376V19.376C11.3881 19.376 12.6053 18.9757 13.5636 18.0173L11.4423 15.896L9.32099 13.7747C9.45311 13.6426 9.62345 13.529 9.81337 13.456C9.99615 13.3857 10.1362 13.376 10.1943 13.376V16.376ZM11.4423 15.896L13.5636 18.0173C14.5891 16.9918 14.9223 15.6958 14.9223 14.552H11.9223H8.92231C8.92231 14.5664 8.91995 14.4709 8.97708 14.311C9.03864 14.1386 9.15083 13.9448 9.32099 13.7747L11.4423 15.896ZM11.9223 14.552H14.9223V9.912H11.9223H8.92231V14.552H11.9223ZM11.9223 9.912H14.9223C14.9223 8.44286 14.5794 6.44204 12.8604 5.18582L11.0903 7.608L9.32026 10.0302C9.18557 9.93175 9.08146 9.82013 9.00711 9.71528C8.93506 9.61367 8.90305 9.53576 8.89265 9.50693C8.88283 9.47974 8.89137 9.49416 8.90181 9.5656C8.91219 9.6367 8.92231 9.74958 8.92231 9.912H11.9223ZM11.0903 7.608L12.6803 5.064C11.9162 4.58647 11.0198 4.288 10.0343 4.288V7.288V10.288C9.91667 10.288 9.80233 10.27 9.70028 10.2391C9.6003 10.2088 9.53319 10.1725 9.50031 10.152L11.0903 7.608ZM10.0343 7.288V4.288C9.37316 4.288 8.72567 4.38582 8.09981 4.5699L8.94631 7.448L9.7928 10.3261C9.89227 10.2968 9.97012 10.288 10.0343 10.288V7.288ZM8.94631 7.448H5.94631V15.992H8.94631H11.9463V7.448H8.94631Z" fill="#2170B3" mask="url(#path-1-outside-1_242_2)"/>
 					</svg>
+				</div>
 
-				</a>
-			</li>
+				<ul>
+					
+					<li className="hover:bg-gray-100">
+						<a href="." className="h-16 px-6 flex justify-center items-center w-full focus:text-[#2170B3]">
+							<svg
+								className="h-5 w-5"
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round">
+								<polyline
+									points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline>
+								<path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z">				
+								</path>
+							</svg>
+						</a>
+					</li>
 
-			<li className="hover:bg-gray-100">
-				<a
-					href="."
-					className="h-16 px-6 flex flex justify-center items-center w-full
-					focus:text-orange-500">
-					<svg
-						className="h-5 w-5"
-						xmlns="http://www.w3.org/2000/svg"
-						width="24"
-						height="24"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="2"
-						stroke-linecap="round"
-						stroke-linejoin="round">
-						<path
-							d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
-					</svg>
+					<li className="hover:bg-gray-100">
+						<a
+							href="."
+							className="h-16 px-6 flex justify-center items-center w-full
+							focus:text-[#2170B3]">
+							<svg
+								className="h-5 w-5"
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round">
+								<circle cx="12" cy="12" r="3">
 
-				</a>
-			</li>
+								</circle>
+								<path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+								
+								</path>
+							</svg>
+						</a>
+					</li>
 
-			<li className="hover:bg-gray-100">
-				<a
-					href="."
-					className="h-16 px-6 flex flex justify-center items-center w-full
-					focus:text-orange-500">
+					<li className="hover:bg-gray-100">
+						<a
+							href="."
+							className="h-16 px-6 flex justify-center items-center w-full
+							focus:text-[#2170B3]">
+							<svg
+								className="h-5 w-5"
+								xmlns="http://www.w3.org/2000/svg"
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"
+								stroke-linecap="round"
+								stroke-linejoin="round">
+								<path
+									d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+								<path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+							</svg>
+						</a>
+					</li>
 
-					<svg
-						className="h-5 w-5"
-						xmlns="http://www.w3.org/2000/svg"
-						width="24"
-						height="24"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="2"
-						stroke-linecap="round"
-						stroke-linejoin="round">
-						<polyline points="3 6 5 6 21 6"></polyline>
-						<path
-							d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2
-							0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-					</svg>
+				</ul>
 
-				</a>
-			</li>
-
-			<li className="hover:bg-gray-100">
-				<a
-					href="."
-					className="h-16 px-6 flex flex justify-center items-center w-full
-					focus:text-orange-500">
-					<svg
-						className="h-5 w-5"
-						xmlns="http://www.w3.org/2000/svg"
-						width="24"
-						height="24"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="2"
-						stroke-linecap="round"
-						stroke-linejoin="round">
-						<circle cx="9" cy="21" r="1"></circle>
-						<circle cx="20" cy="21" r="1"></circle>
-						<path
-							d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0
-							2-1.61L23 6H6"></path>
-					</svg>
-
-				</a>
-			</li>
-
-			<li className="hover:bg-gray-100">
-				<a
-					href="."
-					className="h-16 px-6 flex flex justify-center items-center w-full
-					focus:text-orange-500">
-					<svg
-						className="h-5 w-5"
-						xmlns="http://www.w3.org/2000/svg"
-						width="24"
-						height="24"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="2"
-						stroke-linecap="round"
-						stroke-linejoin="round">
-						<circle cx="12" cy="12" r="3"></circle>
-						<path
-							d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1
-							0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0
-							0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2
-							2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0
-							0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1
-							0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0
-							0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65
-							0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0
-							1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0
-							1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2
-							0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0
-							1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0
-							2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0
-							0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65
-							1.65 0 0 0-1.51 1z"></path>
-					</svg>
-				</a>
-			</li>
-
-			<li className="hover:bg-gray-100">
-				<a
-					href="."
-					className="h-16 px-6 flex flex justify-center items-center w-full
-					focus:text-orange-500">
-					<svg
-						className="h-5 w-5"
-						xmlns="http://www.w3.org/2000/svg"
-						width="24"
-						height="24"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="2"
-						stroke-linecap="round"
-						stroke-linejoin="round">
-						<path
-							d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-						<path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-					</svg>
-				</a>
-			</li>
-
-		</ul>
-
-		<div className="mt-auto h-16 flex items-center w-full">
-			<button
-				className="h-16 w-10 mx-auto flex flex justify-center items-center
-				w-full focus:text-orange-500 hover:bg-red-200 focus:outline-none">
-				<svg
-					className="h-5 w-5 text-red-700"
-					xmlns="http://www.w3.org/2000/svg"
-					width="24"
-					height="24"
-					viewBox="0 0 24 24"
-					fill="none"
-					stroke="currentColor"
-					stroke-width="2"
-					stroke-linecap="round"
-					stroke-linejoin="round">
-					<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-					<polyline points="16 17 21 12 16 7"></polyline>
-					<line x1="21" y1="12" x2="9" y2="12"></line>
-				</svg>
-
-			</button>
-		</div>
-
-	</aside>
+				<div className="mt-auto h-16 flex items-center w-full">
+					<button
+						className="h-16 w-10 mx-auto flex justify-center items-center
+						w-full focus:text-[#2170B3] hover:bg-red-200 focus:outline-none">
+						<svg
+							className="h-5 w-5 text-red-700"
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round">
+							<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+							<polyline points="16 17 21 12 16 7"></polyline>
+							<line x1="21" y1="12" x2="9" y2="12"></line>
+						</svg>
+					</button>
+				</div>
+			</aside>
         </section>
     )
 }
