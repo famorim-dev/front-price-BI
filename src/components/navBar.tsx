@@ -92,7 +92,7 @@ export function NavBar(){
 
 				<div className="mt-auto h-16 flex items-center w-full">
 					<button
-						className="h-16 w-10 mx-auto flex justify-center items-center
+						className="h-16 w-10 mx-auto flex justify-center items-center cursor-pointer
 						w-full focus:text-[#2170B3] hover:bg-red-200 focus:outline-none">
 						<svg
 							className="h-5 w-5 text-red-700"

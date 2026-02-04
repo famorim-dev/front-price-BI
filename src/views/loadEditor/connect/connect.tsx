@@ -1,32 +1,51 @@
-
+import { useEffect, useState } from "react";
+import { ConnectService } from "../../../services/connectService";
+import type { CompanieType } from "../../../types/companies";
 
 export function Connect(){
 
+    const [companies, setCompanies] = useState<CompanieType[]>([]);
+    const [loading, setLoading] = useState(false);
+
+    const connect = new ConnectService()
+    useEffect(() => {
+        setLoading(true);
+        connect.getConnect()
+            .then(data => setCompanies(data))
+            .finally(() => setLoading(false));
+    }, [])
+    
+
+    if (loading) return <p>Carregando...</p>;
+    if (!loading && companies.length === 0) return <p>Nenhuma empresa encontrada.</p>
+
+    const handleClick = async (id_query: string) => {
+        await connect.getCompanySql(id_query)
+    }
 
     return(
-        <section className="bg-white text-gray-700 shadow h-full max-w-full w-[25%]">
+        <section className="bg-white text-gray-700 shadow h-full max-w-full w-[25%] overflow-y-auto">
             <ul>
-				<li className="hover:bg-gray-100">
-					<button className="h-16 px-6 flex justify-center items-center w-full cursor-pointer focus:text-[#2170B3]">
+                {companies.map(data => (
+				<li className="hover:bg-gray-100" key={data.id}>   
+					<button onClick={() => handleClick(data.id!)} className="flex items-center h-16 w-full px-4 cursor-pointer focus:text-[#2170B3]">
 						<svg
-							className="h-5 w-5"
-							xmlns="http://www.w3.org/2000/svg"
-							width="24"
-							height="24"								viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="2"
-							stroke-linecap="round"
-							stroke-linejoin="round">
-							<polyline									points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline>
-							    <path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z">				
-								</path>
+                            className="h-6 w-6 flex-shrink-0 text-gray-500"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            strokeWidth={2}
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                        >
+                            <path d="M17 8h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2M7 16H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+                            <line x1="7" y1="8" x2="17" y2="16" />
 						</svg>
-                        <h3 className="ml-2">
-                            COMPANIE
-                        </h3>
-					</button>
+                            <h3 className="ml-3 text-gray-800 font-medium">{data.name}</h3>
+					</button>  
 				</li>
+                ))}
 			</ul>
         </section>
     )

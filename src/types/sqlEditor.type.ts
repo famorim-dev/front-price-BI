@@ -1,4 +1,5 @@
 export interface SqlEditorProps{
     onRun: (sql: string) => void;
-    className?: string;
+    className?: string
+    id_query: string
 }

@@ -3,13 +3,19 @@ import Editor from '@monaco-editor/react';
 import draculaTheme from 'monaco-themes/themes/dracula.json';
 import type { SqlEditorProps } from '../types/sqlEditor.type';
 import { MdPlayArrow } from "react-icons/md";
+import { ConnectService } from '../services/connectService';
 
 export function SqlEditor({onRun, className}: SqlEditorProps) {
   const [sql, setSql] = useState('SELECT * FROM ;');
+  const [loading, setLoading] = useState(false);
 
   const handleEditorWillMount = (monaco: any) => {
     monaco.editor.defineTheme('dracula', draculaTheme);
   };
+
+  const connect = new ConnectService()
+
+  if (loading) return <p>Carregando...</p>;
 
   return (
     <section className=' flex flex-col relative w-full m-24 p-3 border-2 border-gray-200 rounded-xl bg-[#282a36]'>
@@ -23,7 +29,7 @@ export function SqlEditor({onRun, className}: SqlEditorProps) {
         width="100%"
         height="100%"
         defaultLanguage="sql"
-        defaultValue={sql}
+        value={sql}
         onChange={(value) => setSql(value || '')}
         
       />
