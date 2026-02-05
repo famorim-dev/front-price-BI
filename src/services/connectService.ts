@@ -9,7 +9,7 @@ export class ConnectService{
         return response.data
     }
 
-    async getCompanySql(id_query: string){
+    async getQuerySql(id_query: string){
         const response = await API.get(`/query/get/find/${id_query}`,)
         return response.data
     }

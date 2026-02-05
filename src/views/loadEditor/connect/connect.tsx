@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { ConnectService } from "../../../services/connectService";
 import type { CompanieType } from "../../../types/companies";
+import type { ConnectType } from "../../../types/connect.type";
 
-export function Connect(){
+export function Connect({onSelectCompany} : ConnectType){
 
     const [companies, setCompanies] = useState<CompanieType[]>([]);
     const [loading, setLoading] = useState(false);
@@ -20,7 +21,12 @@ export function Connect(){
     if (!loading && companies.length === 0) return <p>Nenhuma empresa encontrada.</p>
 
     const handleClick = async (id_query: string) => {
-        await connect.getCompanySql(id_query)
+        const response = await connect.getQuerySql(id_query)
+
+        const data = companies.find(data => data.id )
+        if(!data?.id) return
+
+        onSelectCompany(data.id, response.id, response.query_sql_extractor)
     }
 
     return(
@@ -28,7 +34,7 @@ export function Connect(){
             <ul>
                 {companies.map(data => (
 				<li className="hover:bg-gray-100" key={data.id}>   
-					<button onClick={() => handleClick(data.id!)} className="flex items-center h-16 w-full px-4 cursor-pointer focus:text-[#2170B3]">
+					<button onClick={() => handleClick(data.id_query!)} className="flex items-center h-16 w-full px-4 cursor-pointer focus:text-[#2170B3]">
 						<svg
                             className="h-6 w-6 flex-shrink-0 text-gray-500"
                             xmlns="http://www.w3.org/2000/svg"
