@@ -2,7 +2,7 @@ import { useState } from "react";
 import { SqlEditor } from "../../components/sqlEditor";
 import { Connect } from "./connect/connect";
 import { EditorService } from "../../services/editorService";
-import { exportToExcel } from "../../utils/converteExcel";
+//import { exportToExcel } from "../../utils/converteExcel";
 
 export function LoadEditor(){
     const [sql, setSql] = useState('SELECT * FROM')
@@ -19,7 +19,7 @@ export function LoadEditor(){
 
     const handleClickOnRun = async  (sql: string) => {
         const response = await connect.executor(idQuery, sql)
-        exportToExcel(response.data, "meus_dados.xlsx")
+        //exportToExcel(response.data, "meus_dados.xlsx")
     }
 
     return(

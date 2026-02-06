@@ -5,12 +5,11 @@ export class ConnectService{
 
     async getConnect(){
         const response = await API.get("/companie/get")
-        
         return response.data
     }
 
     async getQuerySql(id_query: string){
-        const response = await API.get(`/query/get/find/${id_query}`,)
+        const response = await API.get(`/query/get/${id_query}`,)
         return response.data
     }
 }

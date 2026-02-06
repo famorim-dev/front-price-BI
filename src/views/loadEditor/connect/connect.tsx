@@ -26,7 +26,7 @@ export function Connect({onSelectCompany} : ConnectType){
         const data = companies.find(data => data.id )
         if(!data?.id) return
 
-        onSelectCompany(data.id, response.id, response.query_sql_extractor)
+        onSelectCompany(data.id, response.id, response.sql)
     }
 
     return(
