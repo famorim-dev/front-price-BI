@@ -30,7 +30,7 @@ export function Connect({onSelectCompany} : ConnectType){
     }
 
     return(
-        <section className="bg-white text-gray-700 shadow h-full max-w-full w-[25%] overflow-y-auto">
+        <section className="bg-white text-gray-700 shadow h-full max-w-full w-[15%] overflow-y-auto">
             <ul>
                 {companies.map(data => (
 				<li className="hover:bg-gray-100" key={data.id}>   

@@ -23,8 +23,7 @@ export function LoadEditor(){
     }
 
     return(
-        <main className="flex w-full h-full">
-            
+        <main className="flex w-screen h-screen overflow-hidden">
             <SqlEditor sql={sql} onRun= {handleClickOnRun} className=""/>
             <Connect onSelectCompany={handleClick}/>
         </main>

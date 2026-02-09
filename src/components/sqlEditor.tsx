@@ -10,7 +10,7 @@ export function SqlEditor({sql, onRun, className}: SqlEditorProps) {
   };
 
   return (
-    <section className=' flex flex-col relative w-full m-24 p-3 border-2 border-gray-200 rounded-xl bg-[#282a36]'>
+    <section className='   flex flex-col flex-1 min-w-0 p-4 m-2 border-2 border-gray-200 rounded-xl bg-[#282a36]'>
       <section className='flex justify-end m-2 border-b-2 border-gray-200 rounded-b-md'>
         <button onClick={() => onRun(sql!)}><MdPlayArrow size={24} className='border border-gray-400 rounded-sm text-gray-100 cursor-pointer transition-transform duration-200 hover:-translate-y-0.5 m-3'/></button>
       </section>
@@ -22,6 +22,16 @@ export function SqlEditor({sql, onRun, className}: SqlEditorProps) {
         height="100%"
         defaultLanguage="sql"
         value={sql}
+        options={{
+            automaticLayout: true,
+            wordWrap: 'on',      
+            wrappingIndent: 'indent',
+            scrollBeyondLastLine: false,
+            minimap: { enabled: false },
+            fontSize: 14,
+            lineHeight: 20,
+            fontFamily: 'Fira Code, monospace',
+          }}
       />
     </section>
   );

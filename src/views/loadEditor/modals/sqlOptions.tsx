@@ -1,7 +1,6 @@
 import { ConnectService } from "../../../services/connectService"
 import { useEffect, useState } from "react"
 import type { SqlOptionsType } from "../../../types/sqlOptionsType";
-import type { ConnectType } from "../../../types/connect.type";
 
 export function SqlOptions({id, isOpen, onClose, onSelectSql}: SqlOptionsType){
     const [query, setQuery] = useState<SqlOptionsType[]>([]);
