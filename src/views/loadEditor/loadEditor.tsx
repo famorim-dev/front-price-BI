@@ -7,21 +7,17 @@ import { toast } from "react-toastify";
 
 export function LoadEditor(){
     const [sql, setSql] = useState('SELECT * FROM')
-    const [name, SetName] = useState('')
     const [id, SetId] = useState('')
-    const [idCompany, SetIdCompany] = useState('')
 
     const connect = new EditorService()
 
-    const handleClick = (id_company: string, id: string, sql: string, name: string) => {
-        SetIdCompany(id_company)
+    const handleClick = ( id: string, sql: string) => {
         SetId(id)
-        SetName(name)
         setSql(sql)
     }
 
     const handleClickOnRun = async  (sql: string) => {
-        const response = await connect.executor(idCompany, sql)
+        const response = await connect.executor(id, sql)
         toast.success(response.data.message)
         //exportToExcel(response.data, "meus_dados.xlsx")
     }

@@ -24,7 +24,7 @@ export function Connect({onSelectCompany} : ConnectType){
     if (loading) return <p>Carregando...</p>;
     if (!loading && companies.length === 0) return <p>Nenhuma empresa encontrada.</p>
 
-    const handleClick = async (id: string) => {
+    const handleClick = (id: string) => {
         setId(id)
         setModal(true)
     }
@@ -54,7 +54,7 @@ export function Connect({onSelectCompany} : ConnectType){
                 ))}
 			</ul>
 
-            <SqlOptions id={id} isOpen={modal} onClose={() => setModal(false)}/>
+            <SqlOptions id={id} isOpen={modal} onClose={() => setModal(false)} onSelectSql={onSelectCompany}/>
         </section>
     )
 }

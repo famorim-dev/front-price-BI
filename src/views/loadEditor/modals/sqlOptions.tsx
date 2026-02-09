@@ -1,13 +1,10 @@
 import { ConnectService } from "../../../services/connectService"
 import { useEffect, useState } from "react"
+import type { SqlOptionsType } from "../../../types/sqlOptionsType";
+import type { ConnectType } from "../../../types/connect.type";
 
-type SqlOptionsType ={
-    id: string
-    isOpen: boolean;
-    onClose: () => void;
-}
-export function SqlOptions({id, isOpen, onClose}: SqlOptionsType){
-    const [query, setQuery] = useState('');
+export function SqlOptions({id, isOpen, onClose, onSelectSql}: SqlOptionsType){
+    const [query, setQuery] = useState<SqlOptionsType[]>([]);
 
     const connect = new ConnectService()
 
@@ -15,8 +12,14 @@ export function SqlOptions({id, isOpen, onClose}: SqlOptionsType){
         connect.getQuerySql(id)
             .then(data => setQuery(data))
     }, [id])
-
+    
     if (!isOpen) return null
+
+    const handleClick = (id: string, sql: string) =>{
+        onSelectSql(id, sql)
+        onClose()  
+    }
+
     return(
         <section>
             <div
@@ -24,26 +27,13 @@ export function SqlOptions({id, isOpen, onClose}: SqlOptionsType){
             data-dialog-backdrop-close="true"
             className=" fixed inset-0 z-[999] grid h-screen w-screen place-items-center  bg-opacity-60  backdrop-blur-sm transition-opacity duration-300"
             >
-                <div
-                    className="relative m-4 w-1/4 rounded-lg bg-white shadow-sm"
-                    data-dialog="web-3-modal"
-                >
-                    <div className="flex items-start justify-between p-4">
-                        <div>
-                            <h5 className="text-xl font-medium text-slate-800">
-                            Connect Web 3.0 Wallet
-                            </h5>
-                            <p className="text-slate-500 text-sm font-light">
-                            Choose which card you want to connect
-                            </p>
-                        </div>
+                <div className="relative m-4 w-1/4 rounded-lg bg-white shadow-sm" data-dialog="web-3-modal">
                         <button
                             data-ripple-dark="true"
                             data-dialog-close="true"
-                            className="relative border-2 rounded-lg border-gray-200 h-8 max-h-[32px] w-8 max-w-[32px] cursor-pointer select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-blue-gray-500 transition-all hover:bg-blue-gray-500/10 active:bg-blue-gray-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                            className="m-3 relative border-2 rounded-lg border-gray-200 h-8 max-h-[32px] w-8 max-w-[32px] cursor-pointer select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-blue-gray-500 transition-all hover:bg-blue-gray-500/10 active:bg-blue-gray-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                             type="button"
-                            onClick={onClose}
-                        >
+                            onClick={onClose}>
                             <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -61,6 +51,17 @@ export function SqlOptions({id, isOpen, onClose}: SqlOptionsType){
                                 </svg>
                             </span>
                         </button>
+                    <div className="flex flex-col items-start justify-between p-4">
+                        <div className="flex flex-col items-center w-full">
+                            <h5 className="text-lg font-medium text-slate-800 mb-3">
+                                Selecione:
+                            </h5>
+                            {query.map(data => (
+                            <button key={data.id} onClick={() => handleClick(data.id, data.sql!)} className="cursor-pointer rounded-sm w-full p-2  text-sm font-medium bg-gray-500 text-white hover:border-gray-200 hover:border-2 hover:text-slate-800 hover:bg-white transition-colors duration-200 ease-in-out" >
+                                {data.name}
+                            </button>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
