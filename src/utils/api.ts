@@ -7,8 +7,7 @@ export const API = axios.create({baseURL: import.meta.env.VITE_API_URL,})
 API.interceptors.response.use(
   response => response,
   error => {
-    const message = error.response?.data?.message
-    toast.error(message)
+    toast.error(error.response?.data?.message)
     return Promise.reject(error)
   }
 )
@@ -19,5 +18,5 @@ API.interceptors.request.use(
     if (token) config.headers.Authorization = `Bearer ${token}`;
     return config;
   },
-  error => Promise.reject(error)
+  error => Promise.reject(error.data.message)
 )

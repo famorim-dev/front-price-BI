@@ -8,8 +8,8 @@ export class ConnectService{
         return response.data
     }
 
-    async getQuerySql(id_query: string){
-        const response = await API.get(`/query/get/${id_query}`,)
+    async getQuerySql(id: string){
+        const response = await API.get(`/query/get/${id}`,)
         return response.data
     }
 }
