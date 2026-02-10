@@ -3,4 +3,5 @@ export interface AddSqlType{
     onClose: () => void
     className?: string
     id: string
+    name?: string
 }

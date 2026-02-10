@@ -3,7 +3,7 @@ import draculaTheme from 'monaco-themes/themes/dracula.json';
 import type { SqlEditorProps } from '../types/sqlEditor.type';
 import { MdPlayArrow } from "react-icons/md";
 
-export function SqlEditor({sql, onRun, className}: SqlEditorProps) {
+export function SqlEditor({sql,onChange, onRun, className}: SqlEditorProps) {
 
   const handleEditorWillMount = (monaco: any) => {
     monaco.editor.defineTheme('dracula', draculaTheme);
@@ -20,6 +20,7 @@ export function SqlEditor({sql, onRun, className}: SqlEditorProps) {
         theme="dracula"
         width="100%"
         height="100%"
+        onChange={(value) => onChange?.(value ?? "")}
         defaultLanguage="sql"
         value={sql}
         options={{

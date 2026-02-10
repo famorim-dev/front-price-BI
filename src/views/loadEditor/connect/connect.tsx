@@ -13,7 +13,6 @@ export function Connect({onSelectCompany} : ConnectType){
     const [modalConnect, setModalConnect] = useState(false);
 
     const [id, setId] = useState('');
-    const [idCompany, setIdCompany] = useState('');
 
     useEffect(() => {
         const connect = new ConnectService()

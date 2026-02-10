@@ -5,7 +5,7 @@ import { QueryService } from "../../../services/queryService";
 
 export function SqlOptions({id, isOpen, onClose, onSelectSql}: SqlOptionsType){
     const [query, setQuery] = useState<SqlOptionsType[]>([]);
-    const [modalSql, setModalSql] = useState(Boolean)
+    const [modalSql, setModalSql] = useState(false)
     const [idCompany, setIdCompany] = useState('');
 
     useEffect(() => {
@@ -59,11 +59,10 @@ export function SqlOptions({id, isOpen, onClose, onSelectSql}: SqlOptionsType){
                             </span>
                         </button>
                         
-                        <button onClick={() => handleClickAddSql()} className="flex items-center justify-center m-2 cursor-pointer font-bold  rounded-sm p-2 h-8 max-h-[32px] w-8 max-w-[32px] text-lg bg-gray-500 text-white  hover:bg-gray-600 transition-colors duration-200 ease-in-out" >
+                        <button onClick={() => handleClickAddSql()} className="flex items-center justify-center m-2 cursor-pointer font-bold  rounded-sm h-8 max-h-[32px] w-8 max-w-[32px] text-lg bg-gray-500 text-white  hover:bg-gray-600 transition-colors duration-200 ease-in-out" >
                                 +
                         </button>
                         
-                        <AddSql isOpen={modalSql} id={idCompany} onClose={() => setModalSql(false)} />
                     </div>
                     <div className="flex flex-col items-start justify-between p-4">
                         <div className="flex flex-col items-center w-full">
@@ -79,6 +78,7 @@ export function SqlOptions({id, isOpen, onClose, onSelectSql}: SqlOptionsType){
                     </div>
                 </div>
             </div>
+            <AddSql isOpen={modalSql} id={idCompany} onClose={() => setModalSql(false)} />
         </section>
     )
 }
