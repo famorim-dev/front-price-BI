@@ -5,7 +5,7 @@ import { NavBar } from "./components/navBar"
 import { ToastContainer } from "react-toastify"
 
 function App() {
-  localStorage.setItem("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZlbGlwZS5hbW9yaW1AcHJpY2VtZXQuY29tLmJyIiwiaWF0IjoxNzcwNjQwNTY3LCJleHAiOjE3NzA2ODM3Njd9.seFoZz8kvl5VlCuF6nhU1icC0UY2xKj_6kYQIfIsf_U");
+  localStorage.setItem("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZlbGlwZS5hbW9yaW1AcHJpY2VtZXQuY29tLmJyIiwiaWF0IjoxNzcwNzI2NTM1LCJleHAiOjE3NzA3Njk3MzV9.0dH_cxZ5FEFrNIBRZPrdpMOY7r3qtKHYkXoyHpk2_7M");
   return (
     <BrowserRouter>
     <div className="flex h-screen bg-gray-50">

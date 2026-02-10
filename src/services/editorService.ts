@@ -7,4 +7,5 @@ export class EditorService{
         const response = await API.post(`/executor/${id}`, {sql: sql, name: "teste"})
         return response
     }
+
 }

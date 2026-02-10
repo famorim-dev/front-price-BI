@@ -12,7 +12,7 @@ export function AddConnect({isOpen, onClose}: AddConnectType){
 
     const handleClick= async () =>{
         const connect = new ConnectService()
-        const res = await connect.createQuery(name, url)
+        const res = await connect.createCompany(name, url)
         toast.success(res.message || "Conexão Criada com Sucesso!")
         onClose() 
     }

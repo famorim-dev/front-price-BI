@@ -1,29 +1,19 @@
-import { useEffect, useState } from "react"
-import type { SqlOptionsType } from "../../../types/sqlOptionsType";
-import { AddSql } from "./addSql";
+import { toast } from "react-toastify";
+import type { AddSqlType } from "../../../types/addSqlType";
+import { useState } from "react";
 import { QueryService } from "../../../services/queryService";
 
-export function SqlOptions({id, isOpen, onClose, onSelectSql}: SqlOptionsType){
-    const [query, setQuery] = useState<SqlOptionsType[]>([]);
-    const [modalSql, setModalSql] = useState(Boolean)
-    const [idCompany, setIdCompany] = useState('');
+export function AddSql({isOpen, onClose, id}: AddSqlType){
+    const [sql, setSql] = useState('');
+    const [name, setName] = useState('');
 
-    useEffect(() => {
+    if (!isOpen) return null;
+
+    const handleClick = async () =>{
         const connect = new QueryService()
-        connect.getQuerySql(id)
-            .then(data => setQuery(data))
-    }, [id])
-    
-    if (!isOpen) return null
-
-    const handleClick = (id: string, sql: string) =>{
-        onSelectSql(id, sql)
+        const res = await connect.createQuery(id, name, sql)
+        toast.success(res.message || "Modulo SQL Criado com Sucesso!")
         onClose()  
-    }
-
-    const handleClickAddSql = () =>{
-        setIdCompany(id)
-        setModalSql(true)
     }
 
     return(
@@ -34,7 +24,6 @@ export function SqlOptions({id, isOpen, onClose, onSelectSql}: SqlOptionsType){
             className=" fixed inset-0 z-[999] grid h-screen w-screen place-items-center  bg-opacity-60  backdrop-blur-sm transition-opacity duration-300"
             >
                 <div className="relative m-4 w-1/4 rounded-lg bg-white shadow-sm" data-dialog="web-3-modal">
-                    <div className="flex justify-between">
                         <button
                             data-ripple-dark="true"
                             data-dialog-close="true"
@@ -58,23 +47,31 @@ export function SqlOptions({id, isOpen, onClose, onSelectSql}: SqlOptionsType){
                                 </svg>
                             </span>
                         </button>
-                        
-                        <button onClick={() => handleClickAddSql()} className="flex items-center justify-center m-2 cursor-pointer font-bold  rounded-sm p-2 h-8 max-h-[32px] w-8 max-w-[32px] text-lg bg-gray-500 text-white  hover:bg-gray-600 transition-colors duration-200 ease-in-out" >
-                                +
-                        </button>
-                        
-                        <AddSql isOpen={modalSql} id={idCompany} onClose={() => setModalSql(false)} />
-                    </div>
                     <div className="flex flex-col items-start justify-between p-4">
                         <div className="flex flex-col items-center w-full">
                             <h5 className="text-lg font-medium text-slate-800 mb-3">
-                                Selecione:
+                                Novo Modulo SQL:
                             </h5>
-                            {query.map(data => (
-                            <button key={data.id} onClick={() => handleClick(data.id, data.sql!)} className="cursor-pointer rounded-sm w-full p-2 m-1  text-sm font-medium bg-gray-500 text-white hover:border-gray-200 hover:border-2 hover:text-slate-800 hover:bg-white transition-colors duration-200 ease-in-out" >
-                                {data.name}
+
+                            <input
+                                placeholder="Nome da sua conexão"
+                                className="w-full px-2 py-2 m-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-400 dark:focus:border-blue-400 transition-all duration-200 placeholder-gray-400 dark:placeholder-gray-500 text-gray-900 dark:text-gray-100 hover:border-gray-400 dark:hover:border-gray-500 shadow-sm"
+                                name="nome"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                            />
+
+                            <input
+                                placeholder="Url Da Conexão"
+                                className="w-full px-2 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-400 dark:focus:border-blue-400 transition-all duration-200 placeholder-gray-400 dark:placeholder-gray-500 text-gray-900 dark:text-gray-100 hover:border-gray-400 dark:hover:border-gray-500 shadow-sm"
+                                name="url"
+                                value={sql}
+                                onChange={(e) => setSql(e.target.value)}
+                            />
+
+                            <button onClick={() => handleClick()} className="m-2 cursor-pointer rounded-sm w-full p-2  text-sm font-medium bg-gray-500 text-white  hover:bg-gray-600 transition-colors duration-200 ease-in-out" >
+                                Criar
                             </button>
-                            ))}
                         </div>
                     </div>
                 </div>

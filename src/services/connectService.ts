@@ -8,12 +8,7 @@ export class ConnectService{
         return response.data
     }
 
-    async getQuerySql(id: string){
-        const response = await API.get(`/query/get/${id}`,)
-        return response.data
-    }
-
-    async createQuery(name: string, url: string){
+    async createCompany(name: string, url: string){
         const response = await API.post("/companie", {name: name, url_connect: url})
         return response.data
     }
