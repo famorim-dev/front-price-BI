@@ -11,7 +11,6 @@ export function EditorSql({isOpen, onClose, id, name}: AddSqlType){
         
         const handleClick = async () =>{
             const connect = new QueryService()
-            console.log(id, name, sql)
             const res = await connect.createQuery(id, name!, sql)
             toast.success(res.message || "Modulo SQL Criado com Sucesso!")
             onClose()  

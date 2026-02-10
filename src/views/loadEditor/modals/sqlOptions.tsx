@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import type { SqlOptionsType } from "../../../types/sqlOptionsType";
 import { AddSql } from "./addSql";
 import { QueryService } from "../../../services/queryService";
+import { FiPlus } from "react-icons/fi";
 
 export function SqlOptions({id, isOpen, onClose, onSelectSql}: SqlOptionsType){
     const [query, setQuery] = useState<SqlOptionsType[]>([]);
@@ -59,8 +60,8 @@ export function SqlOptions({id, isOpen, onClose, onSelectSql}: SqlOptionsType){
                             </span>
                         </button>
                         
-                        <button onClick={() => handleClickAddSql()} className="flex items-center justify-center m-2 cursor-pointer font-bold  rounded-sm h-8 max-h-[32px] w-8 max-w-[32px] text-lg bg-gray-500 text-white  hover:bg-gray-600 transition-colors duration-200 ease-in-out" >
-                                +
+                        <button onClick={() => handleClickAddSql()} title="Adicionar SQL" className="flex items-center justify-center m-2 cursor-pointer font-bold  rounded-sm h-8 max-h-[32px] w-8 max-w-[32px] text-lg bg-gray-500 text-white  hover:bg-gray-600 transition-colors duration-200 ease-in-out" >
+                            <FiPlus size={18} />
                         </button>
                         
                     </div>
