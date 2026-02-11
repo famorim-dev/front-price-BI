@@ -3,9 +3,14 @@ import { LoadEditor } from "./views/loadEditor/loadEditor"
 import './index.css'
 import { NavBar } from "./components/navBar"
 import { ToastContainer } from "react-toastify"
+import { Table } from "./views/chooseTable/table/table"
+import { ModuleRegistry, AllCommunityModule, InfiniteRowModelModule } from 'ag-grid-community';
 
 function App() {
-  localStorage.setItem("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZlbGlwZS5hbW9yaW1AcHJpY2VtZXQuY29tLmJyIiwiaWF0IjoxNzcwNzI2NTM1LCJleHAiOjE3NzA3Njk3MzV9.0dH_cxZ5FEFrNIBRZPrdpMOY7r3qtKHYkXoyHpk2_7M");
+  localStorage.setItem("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZlbGlwZS5hbW9yaW1AcHJpY2VtZXQuY29tLmJyIiwiaWF0IjoxNzcwODExNjAzLCJleHAiOjE3NzA4NTQ4MDN9.vY72ehnuyKE1zVop3vLlymjRjfWAqcmksiqZpKojChk");
+
+  
+  ModuleRegistry.registerModules([AllCommunityModule, InfiniteRowModelModule]);
   return (
     <BrowserRouter>
     <div className="flex h-screen bg-gray-50">
@@ -13,6 +18,7 @@ function App() {
       <ToastContainer/>
         <Routes>
             <Route path="/" element={<LoadEditor />} />
+            <Route path="/table" element={<Table />} />
         </Routes>
     </div>
     </BrowserRouter>
