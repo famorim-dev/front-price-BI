@@ -19,7 +19,7 @@ export function NavBar(){
 				<ul>
 					
 					<li className="hover:bg-gray-100">
-						<a href="." className="h-16 px-6 flex justify-center items-center w-full focus:text-[#2170B3]">
+						<a href="/" className="h-16 px-6 flex justify-center items-center w-full focus:text-[#2170B3]">
 							<svg
 								className="h-5 w-5"
 								xmlns="http://www.w3.org/2000/svg"
@@ -41,7 +41,7 @@ export function NavBar(){
 
 					<li className="hover:bg-gray-100">
 						<a
-							href="/table"
+							href="/choosetable"
 							className="h-16 px-6 flex justify-center items-center w-full
 							focus:text-[#2170B3]">
 							<svg
@@ -65,7 +65,7 @@ export function NavBar(){
 
 					<li className="hover:bg-gray-100">
 						<a
-							href="."
+							href="/"
 							className="h-16 px-6 flex justify-center items-center w-full
 							focus:text-[#2170B3]">
 							<svg
@@ -91,7 +91,7 @@ export function NavBar(){
 
 					<li className="hover:bg-gray-100">
 						<a
-							href="."
+							href="/"
 							className="h-16 px-6 flex justify-center items-center w-full
 							focus:text-[#2170B3]">
 							<svg

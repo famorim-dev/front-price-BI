@@ -5,6 +5,7 @@ import { NavBar } from "./components/navBar"
 import { ToastContainer } from "react-toastify"
 import { Table } from "./views/chooseTable/table/table"
 import { ModuleRegistry, AllCommunityModule, InfiniteRowModelModule } from 'ag-grid-community';
+import { ChooseTable } from "./views/chooseTable/chooseTable"
 
 function App() {
   localStorage.setItem("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZlbGlwZS5hbW9yaW1AcHJpY2VtZXQuY29tLmJyIiwiaWF0IjoxNzcwODExNjAzLCJleHAiOjE3NzA4NTQ4MDN9.vY72ehnuyKE1zVop3vLlymjRjfWAqcmksiqZpKojChk");
@@ -18,7 +19,8 @@ function App() {
       <ToastContainer/>
         <Routes>
             <Route path="/" element={<LoadEditor />} />
-            <Route path="/table" element={<Table />} />
+            <Route path="/choosetable" element={<ChooseTable />} />
+            <Route path="/table/:tableName" element={<Table />} />
         </Routes>
     </div>
     </BrowserRouter>
