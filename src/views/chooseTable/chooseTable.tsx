@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 export function ChooseTable(){
     const [loading, setLoading] = useState(false)
     const [table, setTable] = useState<string[]>([]);
+    const [search, setSearch] = useState("");
 
     const navigate =  useNavigate()
     
@@ -35,9 +36,9 @@ export function ChooseTable(){
                                 Tabelas
                             </h2>
                             <div className="text-end">
-                                <form className="flex w-full max-w-sm space-x-3">
+                                <form className="flex w-full max-w-sm space-x-3"  onSubmit={(e) => e.preventDefault()}>
                                     <div className=" relative ">
-                                        <input type="text" id="&quot;form-subscribe-Filter" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent" placeholder="Pesquisar Tabela" />
+                                        <input type="text" id="&quot;form-subscribe-Filter" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent" placeholder="Pesquisar Tabela" value={search} onChange={(e) => setSearch(e.target.value)}/>
                                     </div>
                                     <button className="cursor-pointer flex-shrink-0 px-4 py-2 text-base font-semibold text-white bg-black rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-purple-200" type="submit">
                                         Pesquisar
@@ -59,9 +60,12 @@ export function ChooseTable(){
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        {table.map((name, index) => 
+                                        {table.filter((name) => name
+                                                    .replace(/^extract_/, "")
+                                                    .toLowerCase()
+                                                    .includes(search.toLowerCase())).map((name, index) => 
                                         <tr key={index}>
-                                            
+
                                             <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                                 <a onClick={() => navigate(`/table/${name}`)} className="cursor-pointer text-black font-medium hover:text-gray-700">
                                                         {name.replace(/^extract_/, "")}
