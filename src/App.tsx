@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 import { LoadEditor } from "./views/loadEditor/loadEditor"
 import './index.css'
 import { NavBar } from "./components/navBar"
@@ -21,6 +21,8 @@ function App() {
             <Route path="/" element={<LoadEditor />} />
             <Route path="/choosetable" element={<ChooseTable />} />
             <Route path="/table/:tableName" element={<Table />} />
+
+            <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
     </div>
     </BrowserRouter>
