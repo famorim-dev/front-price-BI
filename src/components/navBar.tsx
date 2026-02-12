@@ -1,7 +1,15 @@
+import { useNavigate } from "react-router-dom"
 
 
 export function NavBar(){
 
+	const nav = useNavigate()
+
+	const handleClick = () =>{
+		localStorage.removeItem("token")
+		nav('/login')
+	}
+	
     return(
         <section className="h-full">
             <aside className="flex flex-col items-center bg-white text-gray-700 shadow h-full">
@@ -115,7 +123,7 @@ export function NavBar(){
 				</ul>
 
 				<div className="mt-auto h-16 flex items-center w-full">
-					<button
+					<button onClick={handleClick}
 						className="h-16 w-10 mx-auto flex justify-center items-center cursor-pointer
 						w-full focus:text-[#2170B3] hover:bg-red-200 focus:outline-none">
 						<svg
