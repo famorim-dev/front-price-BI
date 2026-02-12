@@ -9,9 +9,7 @@ import { Login } from "./views/auth/login/login"
 import { LayoutWithNavbar } from "./components/layoutNavBar"
 
 function App() {
-  localStorage.setItem("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZlbGlwZS5hbW9yaW1AcHJpY2VtZXQuY29tLmJyIiwiaWF0IjoxNzcwODExNjAzLCJleHAiOjE3NzA4NTQ4MDN9.vY72ehnuyKE1zVop3vLlymjRjfWAqcmksiqZpKojChk");
 
-  
   ModuleRegistry.registerModules([AllCommunityModule, InfiniteRowModelModule]);
   return (
     <BrowserRouter>
