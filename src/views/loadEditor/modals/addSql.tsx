@@ -54,7 +54,7 @@ export function AddSql({isOpen, onClose, id}: AddSqlType){
                                 className="w-full px-2 py-2 m-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:focus:ring-blue-400 dark:focus:border-blue-400 transition-all duration-200 placeholder-gray-400 dark:placeholder-gray-500 text-gray-900 dark:text-gray-100 hover:border-gray-400 dark:hover:border-gray-500 shadow-sm"
                                 name="nome"
                                 value={name}
-                                onChange={(e) => setName(e.target.value)}
+                                onChange={(e) => setName(e.target.value.replace(/\s/g, ""))}
                             />
                             <EditorSql id={id} name={name} isOpen={editorOpen} onClose={() => setEditorOpen(false)}/>
                             <button onClick={() => handleClick()} className="m-2 cursor-pointer rounded-sm w-full p-2  text-sm font-medium bg-gray-500 text-white  hover:bg-gray-600 transition-colors duration-200 ease-in-out" >

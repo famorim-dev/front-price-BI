@@ -31,13 +31,6 @@ export function ChooseTable(){
             <div className="h-screen w-full flex justify-center items-center bg-gray-100">
                 <div className="container mx-auto px-4 sm:px-8 max-w-3xl">
                     <div className="py-8">
-                        <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg text-sm text-gray-700">
-                            <p>
-                                Selecione um módulo abaixo ou utilize a barra de pesquisa.
-                                Use <span className="font-semibold">_</span> no lugar dos espaços
-                                (ex.: <span className="font-mono bg-white px-1 rounded">estrela_preco_margens</span>).
-                            </p>
-                        </div>
                         <div className="flex flex-row mb-1 sm:mb-0 justify-between w-full">
                             <h2 className="text-2xl leading-tight">
                                 Tabelas
