@@ -3,17 +3,20 @@ import type { AddSqlType } from "../../../types/addSqlType";
 import { QueryService } from "../../../services/queryService";
 import { useState } from "react";
 import { SqlEditor } from "../../../components/sqlEditor";
+import { useNavigate } from "react-router-dom";
 
 
 export function EditorSql({isOpen, onClose, id, name}: AddSqlType){
         const [sql, setSql] = useState('');
+        const navigate = useNavigate()
         if (!isOpen) return null;
         
         const handleClick = async () =>{
+
             const connect = new QueryService()
             const res = await connect.createQuery(id, name!, sql)
+            navigate('/chooseTable')
             toast.success(res.message || "Modulo SQL Criado com Sucesso!")
-            onClose()  
         }
   
         return(
