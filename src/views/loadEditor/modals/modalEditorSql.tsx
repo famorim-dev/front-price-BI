@@ -15,7 +15,7 @@ export function EditorSql({isOpen, onClose, id, name}: AddSqlType){
 
             const connect = new QueryService()
             const res = await connect.createQuery(id, name!, sql)
-            navigate('/chooseTable')
+            navigate('/fake')
             toast.success(res.message || "Modulo SQL Criado com Sucesso!")
         }
   
