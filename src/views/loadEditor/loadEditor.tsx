@@ -4,6 +4,7 @@ import { Connect } from "./connect/connect";
 import { EditorService } from "../../services/editorService";
 import { toast } from "react-toastify";
 import { Loader } from "../../components/loader";
+import { useNavigate } from "react-router-dom";
 //import { exportToExcel } from "../../utils/converteExcel";
 
 export function LoadEditor(){
@@ -11,6 +12,7 @@ export function LoadEditor(){
     const [id, SetId] = useState('')
     const [loading, setLoading] = useState(false);
 
+    const navigate = useNavigate()
     const connect = new EditorService()
 
     const handleClick = ( id: string, sql: string) => {
@@ -21,7 +23,8 @@ export function LoadEditor(){
     const handleClickOnRun = async  (sql: string) => {
         setLoading(true)
         const response = await connect.executor(id, sql)
-        setLoading(false);
+        setLoading(false)
+        navigate("/choosetable")
         toast.success(response.message ?? "Dados Salvo Com Sucesso!")
         //exportToExcel(response.data, "meus_dados.xlsx")
     }
