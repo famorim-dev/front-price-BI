@@ -31,6 +31,13 @@ export function ChooseTable(){
             <div className="h-screen w-full flex justify-center items-center bg-gray-100">
                 <div className="container mx-auto px-4 sm:px-8 max-w-3xl">
                     <div className="py-8">
+                        <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg text-sm text-gray-700">
+                            <p>
+                                Selecione um módulo abaixo ou utilize a barra de pesquisa.
+                                Use <span className="font-semibold">_</span> no lugar dos espaços
+                                (ex.: <span className="font-mono bg-white px-1 rounded">estrela_preco_margens</span>).
+                            </p>
+                        </div>
                         <div className="flex flex-row mb-1 sm:mb-0 justify-between w-full">
                             <h2 className="text-2xl leading-tight">
                                 Tabelas
@@ -38,7 +45,7 @@ export function ChooseTable(){
                             <div className="text-end">
                                 <form className="flex w-full max-w-sm space-x-3"  onSubmit={(e) => e.preventDefault()}>
                                     <div className=" relative ">
-                                        <input type="text" id="&quot;form-subscribe-Filter" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent" placeholder="Pesquisar Tabela" value={search} onChange={(e) => setSearch(e.target.value)}/>
+                                        <input type="text" id="&quot;form-subscribe-Filter" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent" placeholder="Pesquisar Módulo" value={search} onChange={(e) => setSearch(e.target.value)}/>
                                     </div>
                                     <button className="cursor-pointer flex-shrink-0 px-4 py-2 text-base font-semibold text-white bg-black rounded-lg shadow-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-purple-200" type="submit">
                                         Pesquisar
