@@ -13,8 +13,9 @@ export function Login(){
     const handleClick= async () =>{
         const connect = new AuthService()
         const res = await connect.login(email, password)
-        toast.success("Login com Sucesso!")
-        navigate('/')
+        console.log(res)
+        toast.success("Digite O Token enviado por Email")
+        navigate(`/token`, { state: { id: res } })
     }
 
     return(

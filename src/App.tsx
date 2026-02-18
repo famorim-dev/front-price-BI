@@ -7,6 +7,7 @@ import { ModuleRegistry, AllCommunityModule, InfiniteRowModelModule } from 'ag-g
 import { ChooseTable } from "./views/chooseTable/chooseTable"
 import { Login } from "./views/auth/login/login"
 import { LayoutWithNavbar } from "./components/layoutNavBar"
+import { TwoFactor } from "./views/auth/token/2FA"
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
 
         <Routes>
           <Route path="/login" element={<Login />} />
+          <Route path="/token" element={<TwoFactor />} />
 
           <Route element={<LayoutWithNavbar />}>
 

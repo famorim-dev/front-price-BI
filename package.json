@@ -13,6 +13,7 @@
   "dependencies": {
     "@monaco-editor/react": "^4.7.0",
     "@mui/material": "^7.3.8",
+    "@subframe/core": "^1.154.0",
     "ag-grid-react": "^35.1.0",
     "axios": "^1.13.4",
     "file-saver": "^2.0.5",
