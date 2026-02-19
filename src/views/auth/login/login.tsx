@@ -13,14 +13,13 @@ export function Login(){
     const handleClick= async () =>{
         const connect = new AuthService()
         const res = await connect.login(email, password)
-        console.log(res)
-        toast.success("Digite O Token enviado por Email")
+        toast.success("Digite O Codigo enviado por Email")
         navigate(`/token`, { state: { id: res } })
     }
 
     return(
-            <main className="py-16 w-full h-full">
-                <div className="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
+            <main className=" w-full min-h-screen flex items-center">
+                <div className="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl w-full">
                     <div className="hidden lg:block lg:w-1/2 bg-cover"
                         style={{backgroundImage: "url('https://pricemet.com.br/wp-content/uploads/2023/08/pricemet-solucoes-pesquisa-de-precos-online-mobile.jpg')"}}>
                     </div>

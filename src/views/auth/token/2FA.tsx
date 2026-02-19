@@ -24,8 +24,8 @@ export function TwoFactor(){
     }
     
     return(
-        <main className="py-16 w-full h-full">
-                <div className="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl">
+        <main className="w-full min-h-screen flex items-center">
+                <div className="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl w-full">
                     <div className="hidden lg:block lg:w-1/2 bg-cover"
                         style={{backgroundImage: "url('https://pricemet.com.br/wp-content/uploads/2023/08/pricemet-solucoes-pesquisa-de-precos-online-mobile.jpg')"}}>
                     </div>
