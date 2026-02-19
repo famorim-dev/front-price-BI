@@ -23,8 +23,7 @@ export function Connect({onSelectCompany} : ConnectType){
     }, [])
     
 
-    if (loading) return <p>Carregando...</p>;
-    if (!loading && companies.length === 0) return <p>Nenhuma empresa encontrada.</p>
+    if (loading) return <p>Carregando...</p>
 
     const handleClickSqlCompany = (id: string) => {
         setId(id)
