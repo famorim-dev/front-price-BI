@@ -7,10 +7,11 @@ import "ag-grid-community/styles/ag-theme-alpine.css"
 
 import { Loader } from "../../../components/loader";
 import { useParams } from "react-router-dom";
+import { CustomHeader } from "../components/customHeader";
 
 export function Table(){
 
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(false)
 
     const [columnDefs, setColumnDefs] = useState<ColDef[]>([])
 
@@ -22,7 +23,7 @@ export function Table(){
         const connect = new TableService()
         setLoading(true)
         connect.getTable(table!, { page: 1, pageSize: 50,}).then(data => {
-            setColumnDefs(data.columns.map((col: string) => ({   field: col, filter: typeof data.rows[0][col] === 'number' ? 'agNumberColumnFilter' : 'agTextColumnFilter', sortable: true, floatingFilter: true})))})
+            setColumnDefs(data.columns.map((col: string) => ({   field: col, filter: typeof data.rows[0][col] === 'number' ? 'agNumberColumnFilter' : 'agTextColumnFilter',  headerComponent: CustomHeader, headerComponentParams: { onRemoveColumn: (colId: string) => { setColumnDefs(prev => prev.filter(c => c.field !== colId)); },}, sortable: true, floatingFilter: true,})))})
             .finally(() => {
             setLoading(false)
         });
